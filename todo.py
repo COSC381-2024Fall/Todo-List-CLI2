@@ -7,23 +7,23 @@ class TodoList:
     def add_task(self, task):
         """Adds a new task to the list."""
         self.tasks.append(task)
-        print(f'Task added: {task}')
+        print(f'>>> Task added: {task}')
 
     def list_tasks(self):
         """Lists all tasks in the to-do list."""
         if not self.tasks:
-            print("No tasks in the list!")
+            print(">>> No tasks in the list!")
         else:
             for idx, task in enumerate(self.tasks, start=1):
-                print(f'{idx}. {task}')
+                print(f'>>> {idx}. {task}')
 
     def delete_task(self, task_number):
         """Deletes a task by its number in the list."""
         if task_number <= 0 or task_number > len(self.tasks):
-            print("Invalid task number!")
+            print("!!! Invalid task number!")
         else:
             removed_task = self.tasks.pop(task_number - 1)
-            print(f'Task removed: {removed_task}')
+            print(f'>>> Task removed: {removed_task}')
 
 
 def print_menu():
@@ -53,14 +53,14 @@ def main():
                 task_number = int(input("Enter task number to delete: "))
                 todo_list.delete_task(task_number)
             except ValueError:
-                print("Invalid input! Please enter a number.")
+                print("!!! Invalid input! Please enter a number.")
 
         elif choice == '4':
-            print("Exiting To-Do List CLI App. Goodbye!")
+            print(">>> Exiting To-Do List CLI App. Goodbye!")
             break
 
         else:
-            print("Invalid choice! Please choose a valid option.")
+            print("!!! Invalid choice! Please choose a valid option.")
 
 
 if __name__ == '__main__':
