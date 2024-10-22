@@ -9,6 +9,14 @@ class TodoList:
         self.tasks.append(task)
         print(f'Task added: {task}')
 
+    def edit_task(self, task_number, new_task):
+        """Edits an existing task"""
+        if task_number <= 0 or task_number > len(self.tasks):
+            print("Invalid task number!")
+        else:
+            self.tasks[task_number - 1] = new_task
+            print(f'Task updated: {new_task}')
+
     def list_tasks(self):
         """Lists all tasks in the to-do list."""
         if not self.tasks:
@@ -31,7 +39,8 @@ def print_menu():
     print("1. Add task")
     print("2. List tasks")
     print("3. Delete task")
-    print("4. Quit")
+    print("4. Edit task")
+    print("5. Quit")
 
 
 def main():
@@ -39,7 +48,7 @@ def main():
 
     while True:
         print_menu()
-        choice = input("\nEnter your choice (1-4): ")
+        choice = input("\nEnter your choice (1-5): ")
 
         if choice == '1':
             task = input("Enter the task: ")
@@ -56,6 +65,11 @@ def main():
                 print("Invalid input! Please enter a number.")
 
         elif choice == '4':
+            task_number = int(input("Enter task number to edit: "))
+            new_task = input("Enter the updated task: ")
+            todo_list.edit_task(task_number, new_task)
+
+        elif choice == '5':
             print("Exiting To-Do List CLI App. Goodbye!")
             break
 
