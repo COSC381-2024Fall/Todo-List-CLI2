@@ -27,11 +27,11 @@ class TodoList:
 
 
 def print_menu():
-    print("\nTo-Do List CLI App")
-    print("1. Add task")
-    print("2. List tasks")
-    print("3. Delete task")
-    print("4. Quit")
+    print("\n\tTo-Do List CLI App")
+    print("\t1. Add task")
+    print("\t2. List tasks")
+    print("\t3. Delete task")
+    print("\t4. Quit")
 
 
 def main():
